@@ -8,7 +8,7 @@ import postsRouter from './api/posts/index.js'
 
 const server = express()
 
-const port = process.env.PORT || 3008
+const port = process.env.PORT || 4008
 
 const whitelist = [process.env.FE_DEV_URL, process.env.FE_PROD_URL]
 server.use(cors(
