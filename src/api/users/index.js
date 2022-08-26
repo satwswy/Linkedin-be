@@ -243,7 +243,7 @@ usersRouter.get("/:userId/download/PDF", async (req, res, next) => {
     const foundUser = users.find(user => user._id.toString() === userId)
     res.setHeader("Content-Disposition", "attachment; filename=users.pdf")
     console.log("foundUser:",foundUser)
-    const source = getPDFReadableStream(foundUser)
+    const source = await getPDFReadableStream(foundUser)
     const destination = res
     pipeline(source, destination, err => {
       if (err) console.log(err)
