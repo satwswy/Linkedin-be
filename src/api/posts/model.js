@@ -11,7 +11,7 @@ const postsSchema = new Schema(
         text: {type: String, required: true},
         username: {type: String, required: true},
         image:{type:String},
-        users:[{type: Schema.Types.ObjectId, required:true, ref:"User"}]
+        users:{type:Array}
         // username: {type: String , required:true, unique:true},
     },
     {

@@ -1,7 +1,8 @@
 import PdfPrinter from "pdfmake"
 
 
-export const getPDFReadableStream = usersArray => {
+export const getPDFReadableStream = user => {
+  console.log("this is user:",user)
   const fonts = {
     Roboto: {
       normal: "Helvetica",
@@ -12,10 +13,8 @@ export const getPDFReadableStream = usersArray => {
   const printer = new PdfPrinter(fonts)
 
   const tableContent = [
-    ["NAME", "SURNAME","BIO","TITLE","EXPERIENCES"],
-    ...usersArray.map(user => {
-      return [user.name, user.surname, user.bio, user.title, user.experiences[0]?.role || "no experience"]
-    }),
+    ["NAME", "SURNAME","BIO","TITLE","EXPERIENCES","IMAGE"],
+      [user.name, user.surname, user.bio, user.title, user.experiences[0]?.role || "no experience",user.image]
   ]
 
   console.log(tableContent)
