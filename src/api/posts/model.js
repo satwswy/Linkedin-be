@@ -9,7 +9,7 @@ const {Schema , model} = mongoose
 const postsSchema = new Schema(
     {
         text: {type: String, required: true},
-        username: {type: String, required: false},
+        username: {type: String, required: true, default: 'marios'},
         image:{type:String},
         users:{type:Array}
         // username: {type: String , required:true, unique:true},
